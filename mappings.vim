@@ -34,9 +34,13 @@ nmap <S-j> <C-w><Down>
 " since I remapped S-k, now C-k is the
 " man page keystroke
 noremap <C-K> :Man <c-r>=expand("<cword>")<cr><CR>
+for s:i in [1,2,3,4,5,6,7,8,9]
+    exe 'noremap '.s:i.'<C-K> :Man '.s:i.' <c-r>=expand("<cword>")<cr><CR>'
+endfor
 
 " Control space attempts to finish
 " my word. C-P is too hard to hit
+"
 map! <C-@> <C-p>
 
 " Vim style navigation in the menus

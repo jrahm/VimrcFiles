@@ -11,6 +11,9 @@ map ξ j
 map κ k
 map λ l
 
+map Η H
+map Λ L
+
 " Page up and down
 map Ξ Ï
 map Κ Œ
@@ -27,6 +30,9 @@ map φ  @f
 
 " Still have the ability to undo
 map θ u
+
+map Γ G
+map γγ gg
 
 " These are some code navigation
 " mappings for when I am browsing
