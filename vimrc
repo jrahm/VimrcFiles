@@ -16,10 +16,10 @@ endif
 " Load configuration for if I am
 " loading vim as a man page viewer or
 " not
-if ! exists("g:as_man_page_viewer")
-    source ~/.vim/vimrc.d/noasmanpage.vim
-else
+if exists("g:as_man_page_viewer")
     source ~/.vim/vimrc.d/asmanpage.vim
+else
+    source ~/.vim/vimrc.d/noasmanpage.vim
 endif
 
 " Load a file in the current directory

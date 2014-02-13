@@ -120,6 +120,7 @@ map <S-C>c :<UP><CR>
 
 map <S-C>j @
 noremap q :call SwapKeys()<CR>q
+noremap q: q:
 
 " Highlight a section and run this to replace
 " all occurences
