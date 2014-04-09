@@ -44,8 +44,8 @@ endfor
 map! <C-@> <C-p>
 
 " Vim style navigation in the menus
-inoremap <expr> j pumvisible() ? "\<C-N>" : "j"
-inoremap <expr> k pumvisible() ? "\<C-P>" : "k"
+imap <expr> ï pumvisible() ? "\<C-N>" : "ï"
+imap <expr> œ pumvisible() ? "\<C-P>" : "œ"
 
 " F1,F2 Go to the next and previous make error
 map <F2> :cn<CR>  

@@ -72,3 +72,4 @@ endfunc
 
 hi hsType     ctermfg=186 cterm=bold
 hi VarId      ctermfg=188 cterm=none
+let g:java_highlight_all=1
