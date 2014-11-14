@@ -11,8 +11,8 @@ map Ï <c-d>
 imap   <c-p>
 
 " AltGr-K
-map œ <c-y>
-map Œ <c-U>
+map œ m'<c-y>
+map Œ m'<c-U>
 
 " AltGr-C Copy to the clipboard
 map © "+y
@@ -23,6 +23,12 @@ map ® "+p
 map á @a
 map ß @s
 map ð @d
+
+map Á "ap
+map § "sp
+map Ð "dp
+
+inoremap © <C-x><C-o>
 
 " Formatting text. AltGr-P 
 map ë gqip

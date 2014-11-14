@@ -4,6 +4,7 @@ source ~/.vim/vimrc.d/mappings.vim
 source ~/.vim/vimrc.d/bash_start.vim
 source ~/.vim/vimrc.d/options.vim
 source ~/.vim/vimrc.d/autocmd.vim
+source ~/.vim/vimrc.d/gmail.vim
 
 " Load specific configuration for when I
 " am either is some kind of xterm or not
@@ -27,3 +28,10 @@ endif
 if filereadable(".vimsource")
     source .vimsource
 endif
+
+command Radiate call radiation#Radiate()
+call pathogen#infect()
+" set term=rxvt-unicode-256color
+
+let g:showmarks_enable=0
+set laststatus=2

@@ -9,7 +9,8 @@ let g:radiation_noisy = 1
 set autoindent
 
 " I like the last status line
-set laststatus=2
+set laststatus=0
+set foldmethod=syntax
 
 " More bash-ish style tab-completion,
 " far superior to the Windows-style
@@ -60,8 +61,8 @@ set omnifunc=syntaxcomplete#Complete
 let g:syntastic_cpp_check_header = 1
 
 set keymap=dvorak
-let g:radiation_c_cflags   = "$(cat .syntastic_c_config 2>/dev/null||true)"
-let g:radiation_cpp_cflags = "$(cat .syntastic_cpp_config 2>/dev/null||true)"
+" let g:radiation_c_cflags   = "$(cat .syntastic_c_config 2>/dev/null||true)"
+" let g:radiation_cpp_cflags = "$(cat .syntastic_cpp_config 2>/dev/null||true)"
 
 function! SynStack()
     if !exists("*synstack")
@@ -73,3 +74,7 @@ endfunc
 hi hsType     ctermfg=186 cterm=bold
 hi VarId      ctermfg=188 cterm=none
 let g:java_highlight_all=1
+
+" Use box drawing characters
+set fillchars=vert:│
+set foldlevel=20

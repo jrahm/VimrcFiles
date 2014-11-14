@@ -53,7 +53,7 @@ map <F1> :cp<CR>
 
 " tab will append a tab at the beginning
 " move the cursor to teh soft start of line
-map <Tab> I<Tab><ESC>$^
+map <Tab> :s/^/    <CR>$^
 " shift-tab dedents either 4 spaces, or
 " one white space character.
 map <S-Tab> :.s/^\(    \\|\s\)//g<CR>:noh<CR>
@@ -94,6 +94,7 @@ map - :res -5<CR>
 " my 'external command interface'
 
 " run make
+noremap <S-C><S-C> <S-C>
 map <S-C>m :make<CR>
 
 " More intuitive clipboard paste
@@ -121,6 +122,8 @@ map <S-C>c :<UP><CR>
 map <S-C>j @
 noremap q :call SwapKeys()<CR>q
 noremap q: q:
+
+noremap , ;
 
 " Highlight a section and run this to replace
 " all occurences
@@ -168,7 +171,7 @@ vmap <F1> :w !ssh industrial 'cat > /tmp/tmp && chmod 777 /tmp/tmp'<CR><CR>
 " This one does a pull from industrial
 vmap <F2> :!ssh industrial 'cat /tmp/tmp'<CR>
 
-vmap <Tab> :g/^/norm I<TAB><CR>:noh<CR>gv
+vmap <Tab> :g/^/s/^/    <CR>:noh<CR>gv
 vmap <S-Tab> :s/^\(    \\|\s\)//g<CR>:noh<CR>gv
 
 " In visual mode, we can't change 
@@ -193,10 +196,26 @@ map z' 0i\{}<ESC>hi
 " Write as superuser! The most useful function ever!
 " No longer need to have that aw crap moment when ypu
 " realize you're editing as a normal user
-map <S-N>wsu :w! /tmp/vimtmp<CR>:!sh -c 'sudo cp /tmp/vimtmp %:p'<CR>L
+map <S-N>wsu :w! /tmp/vimtmp<CR>:!sudo sh -c 'cat /tmp/vimtmp > %:p'<CR>L
 
 " mapping for easy use with errormarker.vim
 map <leader><leader>c :ErrorAtCursor<CR>
+noremap ds% %%r ``r ``
+
+imap <ESC><ESC> <ESC>l~
+
+noremap  <space> za
+vnoremap <space> zf
+
+inoremap <ESC><Space> <C-P>
+noremap  <C-N>p o<C-o>p
+
+noremap <C-j> <S-j>
+" imap <Backspace> <C-o>:echoerr "nope"<cr>
+map <Backspace> :echoerr "nope"<cr>
 
 source ~/.vim/vimrc.d/ext/altgr.vim
 source ~/.vim/vimrc.d/ext/greek.vim
+
+noremap <S-C>; :!wmctrl -a 
+

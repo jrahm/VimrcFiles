@@ -1,5 +1,3 @@
-au BufNewFile *.h call AutoHFil()
-
 au BufRead,BufNewFile *.go set filetype=go
 au BufRead,BufNewFile *.h set filetype=c
 " Use MySQL highlighting for sql files
@@ -13,4 +11,3 @@ au BufRead,BufNewFile *.rkt set filetype=racket
 au BufEnter *Makefile*,*.mk,makefile,MAKEFILE set noexpandtab
 au BufEnter *.java nnoremap <buffer> í :call PutImportStatement()<CR>
 au BufNewFile *.java call AutoJavaFile()
-autocmd VimEnter * call StartUp()
